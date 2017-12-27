@@ -34,34 +34,7 @@ texture = ExtResource( 2 )
 
 [node name="HealthBar" parent="David" instance=ExtResource( 3 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="David"]
-
-transform/pos = Vector2( 526.183, 215.051 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Ground" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-
-input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1.08208, 0, 0, 0.259453, 527.525, 287.54 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
-
-transform/pos = Vector2( 527.525, 287.54 )
-transform/scale = Vector2( 1.08208, 0.259453 )
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
+transform/pos = Vector2( 518.302, 239.426 )
+display_health_label = false
 
 

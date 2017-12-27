@@ -57,6 +57,7 @@ func _process(delta):4
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
 	move(velocity)
+	health_bar.set_global_pos(Vector2(85,25))
 	if(health<0):
 		queue_free()
 	pass
