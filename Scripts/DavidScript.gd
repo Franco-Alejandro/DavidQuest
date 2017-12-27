@@ -60,11 +60,13 @@ func _process(delta):
 	health_bar.set_global_pos(Vector2(85,25))
 	if(health<0):
 		queue_free()
-		
+	if get_owner().hotdogs_collected>0:
+		get_owner().hotdogs_collected = 0;
+		health += 10
+		health_bar.set_hp(health)
 	if is_colliding():
 		var normal = get_collision_normal()
 		var final_movement = normal.slide(movement_reminder)
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
-		print("Collision")
 	pass
