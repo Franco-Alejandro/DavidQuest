@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scripts/DavidScript.gd" type="Script" id=1]
 [ext_resource path="res://sprite.tex" type="Texture" id=2]
 [ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/sounds/1 Level 1 theme.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 20.9272, 21.146 )
+extents = Vector2( 13.3395, 21.146 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -21,7 +20,7 @@ extents = Vector2( 239.698, 10 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 518.703, 195.458 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 518.059, 195.673 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -40,7 +39,7 @@ display_health_label = false
 
 [node name="DavidCollision" type="CollisionShape2D" parent="David"]
 
-transform/pos = Vector2( 518.703, 195.458 )
+transform/pos = Vector2( 518.059, 195.673 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -66,16 +65,5 @@ transform/pos = Vector2( 513.852, 240.367 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
-
-[node name="MusicLevel1" type="StreamPlayer" parent="."]
-
-stream/stream = ExtResource( 4 )
-stream/play = true
-stream/loop = true
-stream/volume_db = 0.0399999
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 
