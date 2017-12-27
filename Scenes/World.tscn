@@ -1,17 +1,10 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://level1.tex" type="Texture" id=2]
-[ext_resource path="res://Scripts/DavidScript.gd" type="Script" id=3]
-[ext_resource path="res://sprite.tex" type="Texture" id=4]
-[ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sounds/1 Level 1 theme.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Scenes/Hotdog.tscn" type="PackedScene" id=7]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 13.9759, 21.146 )
+[ext_resource path="res://assets/sounds/1 Level 1 theme.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/Hotdog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/David.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -47,43 +40,10 @@ script/script = ExtResource( 1 )
 transform/pos = Vector2( 1501.73, 149.341 )
 texture = ExtResource( 2 )
 
-[node name="David" type="KinematicBody2D" parent="."]
-
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 37.0455, 245.398 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-script/script = ExtResource( 3 )
-acutal_y = 0
-
-[node name="DavidSprite" type="Sprite" parent="David"]
-
-transform/pos = Vector2( 27.8677, 246.866 )
-texture = ExtResource( 4 )
-
-[node name="HealthBar" parent="David" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 518.302, 239.426 )
-display_health_label = false
-
-[node name="DavidCollision" type="CollisionShape2D" parent="David"]
-
-visibility/visible = false
-transform/pos = Vector2( 37.0455, 245.398 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
 [node name="Ground" type="Node2D" parent="."]
-
-editor/display_folded = true
 
 [node name="Floor" type="StaticBody2D" parent="Ground"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1.07668, 199.356, 285.518 )
@@ -308,7 +268,7 @@ _update_shape_index = 5
 
 [node name="MusicLevel1" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 6 )
+stream/stream = ExtResource( 3 )
 stream/play = true
 stream/loop = true
 stream/volume_db = 0.0399999
@@ -321,76 +281,80 @@ stream/buffering_ms = 500
 
 editor/display_folded = true
 
-[node name="Hotdog" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 577.355, 156.801 )
 
-[node name="Hotdog3" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog3" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1337.35, 52.801 )
 
-[node name="Hotdog4" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog4" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1446.35, 264.801 )
 
-[node name="Hotdog5" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog5" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1341.35, 119.801 )
 
-[node name="Hotdog6" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog6" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1699.35, 206.801 )
 
-[node name="Hotdog7" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog7" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2020.35, 134.801 )
 
-[node name="Hotdog14" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog14" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2202.35, 189.801 )
 
-[node name="Hotdog15" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog15" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2334.35, 195.801 )
 
-[node name="Hotdog16" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog16" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2591.35, 135.801 )
 
-[node name="Hotdog17" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog17" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2762.35, 263.801 )
 
-[node name="Hotdog8" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog8" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1078.35, 194.801 )
 
-[node name="Hotdog9" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog9" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 946.355, 185.801 )
 
-[node name="Hotdog10" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog10" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 859.355, 195.801 )
 
-[node name="Hotdog11" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog11" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 615.355, 265.801 )
 
-[node name="Hotdog12" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog12" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 121.355, 181.801 )
 
-[node name="Hotdog13" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog13" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 231.355, 232.801 )
 
-[node name="Hotdog2" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog2" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1626.4, 133.801 )
 
-[node name="Hotdog1" parent="Hotdogs" instance=ExtResource( 7 )]
+[node name="Hotdog1" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 421.399, 146.801 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 65.4559, 244.201 )
 
 

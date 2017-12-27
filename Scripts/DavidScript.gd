@@ -6,7 +6,7 @@ var velocity = Vector2()
 var speed_x = 0
 var speed_y = 0
 var jumps_until_now = 0
-export var acutal_y = 0
+
 #HEALTH BAR
 onready var health_bar = get_node("HealthBar")
 
@@ -38,12 +38,12 @@ func set_direction():
 		direction = input_direction
 	if Input.is_action_pressed("ui_left"):
 		input_direction = -1
-		health -= 0.25
+		health -= 0.15
 		health_bar.set_hp(health)
 		get_node( "DavidSprite" ).set_flip_h(true)
 	elif Input.is_action_pressed("ui_right"):
 		input_direction = 1
-		health -= 0.25
+		health -= 0.15
 		health_bar.set_hp(health)
 		get_node( "DavidSprite" ).set_flip_h(false)
 	else:
@@ -51,7 +51,6 @@ func set_direction():
 	pass
 	
 func _process(delta):
-	acutal_y = get_global_pos().y
 	set_direction()
 	if input_direction:
 		speed_x += ACCEL * delta
@@ -67,7 +66,7 @@ func _process(delta):
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
 	var movement_reminder = move(velocity)
-	health_bar.set_global_pos(Vector2(85,25))
+	health_bar.set_global_pos(Vector2(get_node( "Camera2D" ).get_global_pos().x,25))
 	if(health<0):
 		queue_free()
 	if get_owner().hotdogs_collected>0:
@@ -80,4 +79,5 @@ func _process(delta):
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
 		jump_count = 0
+	
 	pass

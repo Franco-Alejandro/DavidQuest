@@ -11,7 +11,8 @@ export var value = 1
 func _ready():
 	if get_owner() != null:
 		get_owner().hotdogs_total += value
-	connect(\"body_enter\", self, \"_collect_hotdog\" )
+	get_node(\"Area2D\").connect(\"body_enter\", self, \"_collect_hotdog\" )
+	get_node(\"HotdogAnimation\").play(\"Anim\")
 	pass
 
 
@@ -52,7 +53,6 @@ value = 1
 
 [node name="HotdogSprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, 5.93196 )
 texture = ExtResource( 1 )
 
 [node name="HotdogAnimation" type="AnimationPlayer" parent="."]
