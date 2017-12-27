@@ -56,8 +56,15 @@ func _process(delta):
 	
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
-	move(velocity)
+	var movement_reminder = move(velocity)
 	health_bar.set_global_pos(Vector2(85,25))
 	if(health<0):
 		queue_free()
+		
+	if is_colliding():
+		var normal = get_collision_normal()
+		var final_movement = normal.slide(movement_reminder)
+		speed_y = normal.slide(Vector2(0, speed_y)).y
+		move(final_movement)
+		print("Collision")
 	pass
