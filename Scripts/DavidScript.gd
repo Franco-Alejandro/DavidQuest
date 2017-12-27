@@ -6,6 +6,7 @@ var velocity = Vector2()
 var speed_x = 0
 var speed_y = 0
 var jumps_until_now = 0
+export var acutal_y = 0
 #HEALTH BAR
 onready var health_bar = get_node("HealthBar")
 
@@ -48,6 +49,7 @@ func set_direction():
 	pass
 	
 func _process(delta):
+	acutal_y = get_global_pos().y
 	set_direction()
 	if input_direction:
 		speed_x += ACCEL * delta
@@ -76,5 +78,4 @@ func _process(delta):
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
 		jump_count = 0
-		print("Collision")
 	pass
