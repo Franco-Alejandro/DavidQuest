@@ -61,7 +61,7 @@ acutal_y = 0
 
 [node name="DavidSprite" type="Sprite" parent="David"]
 
-transform/pos = Vector2( 37.5468, 246.866 )
+transform/pos = Vector2( 27.8677, 246.866 )
 texture = ExtResource( 4 )
 
 [node name="HealthBar" parent="David" instance=ExtResource( 5 )]
