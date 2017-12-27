@@ -48,4 +48,5 @@ func _process(delta):
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
 	move(velocity)
+
 	pass
