@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 20.9272, 21.146 )
+extents = Vector2( 13.9759, 21.146 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -21,7 +21,7 @@ extents = Vector2( 239.698, 10 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 518.703, 195.458 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 518.274, 195.458 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -40,7 +40,7 @@ display_health_label = false
 
 [node name="DavidCollision" type="CollisionShape2D" parent="David"]
 
-transform/pos = Vector2( 518.703, 195.458 )
+transform/pos = Vector2( 518.274, 195.458 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
