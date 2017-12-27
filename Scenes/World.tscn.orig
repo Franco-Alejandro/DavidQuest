@@ -24,7 +24,7 @@ script/script = ExtResource( 1 )
 
 [node name="DavidSprite" type="Sprite" parent="David"]
 
-transform/pos = Vector2( 517.682, 277.519 )
+transform/pos = Vector2( 485.697, 280.589 )
 texture = ExtResource( 2 )
 [node name="HealthBar" parent="David" instance=ExtResource( 3 )]
 
