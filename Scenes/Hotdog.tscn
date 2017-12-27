@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://assets/images/pancho.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+export var value = 1
+
+func _ready():
+	if get_owner() != null:
+		get_owner().hotdogs_total += value
+	connect(\"body_enter\", self, \"_collect_hotdog\" )
+	pass
+
+
+func _collect_hotdog( body ):
+	if get_owner() != null:
+		get_owner().hotdogs_collected += value
+	
+	queue_free()
+	pass # replace with function body
+"
+
+[sub_resource type="Animation" id=2]
+
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("HotdogSprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 3 ), Vector2( 0, 7 ), Vector2( 0, 3 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 29.9399
+
+[node name="Hotdog" type="Node2D"]
+
+transform/pos = Vector2( 0.193718, 0 )
+script/script = SubResource( 1 )
+value = 1
+
+[node name="HotdogSprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 5.93196 )
+texture = ExtResource( 1 )
+
+[node name="HotdogAnimation" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 0
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Anim = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="Area2D" type="Area2D" parent="."]
+
+transform/pos = Vector2( -0.22234, 6.76695 )
+transform/scale = Vector2( 0.220952, 0.220952 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.87655, -0.625519 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/pos = Vector2( 1.87655, -0.625519 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Area2D" to="." method="_collect_hotdog"]
+
+

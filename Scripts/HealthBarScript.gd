@@ -1,9 +1,10 @@
 extends Node2D
 #vars
-export (bool) var display_health_label = true
+export (bool) var display_health_label = false
 onready var Health_points = get_node("Health_points")
 var max_hp =100
 var curr_val =100
+
 onready var health = get_node("Health")
 
 func _ready():
@@ -21,6 +22,7 @@ func set_hp(value):
 
 
 func update():
+	
 	#Health %
 	var percentage = curr_val/max_hp
 	
