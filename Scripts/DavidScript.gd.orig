@@ -17,7 +17,7 @@ const MAX_SPEED = 150
 const JUMP_FORCE = 800
 const GRAVITY = 2000
 
-func _ready():	
+func _ready():
 	set_process_input(true)
 	set_process(true)
 	health_bar.init()
@@ -43,7 +43,7 @@ func set_direction():
 		input_direction = 0
 	pass
 	
-func _process(delta):4
+func _process(delta):
 	set_direction()
 	if input_direction:
 		speed_x += ACCEL * delta
@@ -56,7 +56,25 @@ func _process(delta):4
 	
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
-	move(velocity)
+	var movement_reminder = move(velocity)
+	health_bar.set_global_pos(Vector2(85,25))
 	if(health<0):
 		queue_free()
+<<<<<<< HEAD
+		
+=======
+	if get_owner().hotdogs_collected>0:
+		get_owner().hotdogs_collected = 0;
+		health += 10
+		health_bar.set_hp(health)
+>>>>>>> 72481af27a277bcd41d94d000340d5e9995f8664
+	if is_colliding():
+		var normal = get_collision_normal()
+		var final_movement = normal.slide(movement_reminder)
+		speed_y = normal.slide(Vector2(0, speed_y)).y
+		move(final_movement)
+<<<<<<< HEAD
+		print("Collision")
+=======
+>>>>>>> 72481af27a277bcd41d94d000340d5e9995f8664
 	pass

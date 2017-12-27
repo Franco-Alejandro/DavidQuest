@@ -5,17 +5,21 @@ var input_direction = 0
 var velocity = Vector2()
 var speed_x = 0
 var speed_y = 0
-
+var jumps_until_now = 0
+export var acutal_y = 0
 #HEALTH BAR
 onready var health_bar = get_node("HealthBar")
 
 var health = 100
+var jump_count = 0
 
 const ACCEL = 250
 const DECEL = 500
 const MAX_SPEED = 150
-const JUMP_FORCE = 800
+const JUMP_FORCE = 600
 const GRAVITY = 2000
+const MAX_FALL_SPEED = 1400
+const MAX_JUMP_COUNT = 2
 
 func _ready():
 	set_process_input(true)
@@ -24,8 +28,9 @@ func _ready():
 	pass
 
 func _input(event):
-	if event.is_action_pressed("ui_up"):
+	if jump_count < MAX_JUMP_COUNT and event.is_action_pressed("ui_up"):
 		speed_y = -JUMP_FORCE
+		jump_count += 1
 	pass
 
 func set_direction():
@@ -44,6 +49,7 @@ func set_direction():
 	pass
 	
 func _process(delta):
+	acutal_y = get_global_pos().y
 	set_direction()
 	if input_direction:
 		speed_x += ACCEL * delta
@@ -53,6 +59,8 @@ func _process(delta):
 	speed_x = clamp(speed_x, 0, MAX_SPEED)
 	
 	speed_y += GRAVITY * delta
+	if speed_y > MAX_FALL_SPEED:
+		speed_y = MAX_FALL_SPEED
 	
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
@@ -69,5 +77,5 @@ func _process(delta):
 		var final_movement = normal.slide(movement_reminder)
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
-		print("Collision")
+		jump_count = 0
 	pass
