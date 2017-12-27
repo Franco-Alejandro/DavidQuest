@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scripts/HealthBarScript.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/Health_pixel.png" type="Texture" id=2]
+[ext_resource path="res://barra.tex" type="Texture" id=3]
+
+[node name="HealthBar" type="Node2D"]
+
+script/script = ExtResource( 1 )
+display_health_label = true
+
+[node name="Health BG" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -52.0
+margin/top = -7.0
+margin/right = 53.0
+margin/bottom = 7.0
+texture = ExtResource( 2 )
+modulate = Color( 0.103271, 0.110264, 0.550781, 1 )
+expand = true
+stretch_mode = 0
+
+[node name="Health" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -52.0
+margin/top = -7.0
+margin/right = 53.0
+margin/bottom = 7.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+
+[node name="Overlay" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0.581139, 0 )
+texture = ExtResource( 3 )
+
+[node name="Health_points" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -51.0
+margin/top = -6.0
+margin/right = 53.0
+margin/bottom = 8.0
+text = "100%"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
