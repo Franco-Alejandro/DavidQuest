@@ -40,10 +40,12 @@ func set_direction():
 		input_direction = -1
 		health -= 0.25
 		health_bar.set_hp(health)
+		get_node( "DavidSprite" ).set_flip_h(true)
 	elif Input.is_action_pressed("ui_right"):
 		input_direction = 1
 		health -= 0.25
 		health_bar.set_hp(health)
+		get_node( "DavidSprite" ).set_flip_h(false)
 	else:
 		input_direction = 0
 	pass

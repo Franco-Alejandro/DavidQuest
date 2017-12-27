@@ -323,11 +323,71 @@ editor/display_folded = true
 
 [node name="Hotdog" parent="Hotdogs" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 564.355, 151.801 )
+transform/pos = Vector2( 577.355, 156.801 )
+
+[node name="Hotdog3" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1337.35, 52.801 )
+
+[node name="Hotdog4" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1446.35, 264.801 )
+
+[node name="Hotdog5" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1341.35, 119.801 )
+
+[node name="Hotdog6" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1699.35, 206.801 )
+
+[node name="Hotdog7" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 2020.35, 134.801 )
+
+[node name="Hotdog14" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 2202.35, 189.801 )
+
+[node name="Hotdog15" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 2334.35, 195.801 )
+
+[node name="Hotdog16" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 2591.35, 135.801 )
+
+[node name="Hotdog17" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 2762.35, 263.801 )
+
+[node name="Hotdog8" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1078.35, 194.801 )
+
+[node name="Hotdog9" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 946.355, 185.801 )
+
+[node name="Hotdog10" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 859.355, 195.801 )
+
+[node name="Hotdog11" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 615.355, 265.801 )
+
+[node name="Hotdog12" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 121.355, 181.801 )
+
+[node name="Hotdog13" parent="Hotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 231.355, 232.801 )
 
 [node name="Hotdog2" parent="Hotdogs" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 667.399, 148.801 )
+transform/pos = Vector2( 1626.4, 133.801 )
 
 [node name="Hotdog1" parent="Hotdogs" instance=ExtResource( 7 )]
 
