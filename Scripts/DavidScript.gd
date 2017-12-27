@@ -17,7 +17,7 @@ const MAX_SPEED = 150
 const JUMP_FORCE = 800
 const GRAVITY = 2000
 
-func _ready():	
+func _ready():
 	set_process_input(true)
 	set_process(true)
 	health_bar.init()
@@ -43,7 +43,7 @@ func set_direction():
 		input_direction = 0
 	pass
 	
-func _process(delta):4
+func _process(delta):
 	set_direction()
 	if input_direction:
 		speed_x += ACCEL * delta
