@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scripts/DavidScript.gd" type="Script" id=1]
 [ext_resource path="res://sprite.tex" type="Texture" id=2]
@@ -9,13 +9,18 @@
 custom_solver_bias = 0.0
 extents = Vector2( 20.5076, 20.7755 )
 
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 22.2447, 4.61252 )
+
 [node name="World" type="Node2D"]
 
 [node name="David" type="KinematicBody2D" parent="."]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 485.669, 280.613 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 526.183, 215.051 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -24,22 +29,44 @@ script/script = ExtResource( 1 )
 
 [node name="DavidSprite" type="Sprite" parent="David"]
 
-transform/pos = Vector2( 485.697, 280.589 )
+transform/pos = Vector2( 526.306, 217.811 )
 texture = ExtResource( 2 )
+
 [node name="HealthBar" parent="David" instance=ExtResource( 3 )]
 
+<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="David"]
 
-transform/pos = Vector2( 485.669, 280.613 )
+transform/pos = Vector2( 526.183, 215.051 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Ground" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.08208, 0, 0, 0.259453, 527.525, 287.54 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+
+transform/pos = Vector2( 527.525, 287.54 )
+transform/scale = Vector2( 1.08208, 0.259453 )
+shape = SubResource( 2 )
 trigger = false
-_update_shape_index = -1
+_update_shape_index = 0
+=======
+transform/pos = Vector2( 518.302, 239.426 )
+display_health_label = false
+>>>>>>> master
 
 
