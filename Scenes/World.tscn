@@ -21,6 +21,7 @@ texture = ExtResource( 2 )
 
 [node name="HealthBar" parent="David" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 62.5772, 17.6848 )
+transform/pos = Vector2( 518.302, 239.426 )
+display_health_label = false
 
 
