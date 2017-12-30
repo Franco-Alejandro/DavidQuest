@@ -10,7 +10,7 @@ var jumping = false
 
 #HEALTH BAR
 onready var health_bar = get_node("HealthBar")
-onready var spriteAnimation = get_node("DavidAnimated")
+onready var spriteAnimation = get_node("AnimatedSprite")
 
 var health = 100
 var jump_count = 0
@@ -42,12 +42,12 @@ func set_direction():
 		direction = input_direction
 	if Input.is_action_pressed("ui_left"):
 		input_direction = -1
-		health -= 0.25
+		health -= 0.20
 		health_bar.set_hp(health)
 		spriteAnimation.set_flip_h(true)
 	elif Input.is_action_pressed("ui_right"):
 		input_direction = 1
-		health -= 0.25
+		health -= 0.20
 		health_bar.set_hp(health)
 		spriteAnimation.set_flip_h(false)
 	else:

@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Scripts/DavidScript.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/sprite.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/walk1.png" type="Texture" id=4]
-[ext_resource path="res://sprite.tex" type="Texture" id=5]
-[ext_resource path="res://assets/images/walk2.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/jump.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/walk2.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/jump.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,15 +20,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
-"speed": 8.0
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "jump",
-"speed": 60.0
+"speed": 5.0
 } ]
 
 [node name="David" type="KinematicBody2D"]
@@ -74,9 +73,9 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="DavidAnimated" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 2 )
-animation = "walk"
+animation = "idle"
 
 
