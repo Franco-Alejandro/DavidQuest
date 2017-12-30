@@ -11,7 +11,7 @@ var jumps_until_now = 0
 onready var health_bar = get_node("HealthBar")
 
 var health = 100
-var jump_count = 0
+var jump_count = 0 
 
 const ACCEL = 250
 const DECEL = 500
