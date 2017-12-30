@@ -56,14 +56,15 @@ _update_shape_index = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+visibility/behind_parent = true
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
+zoom = Vector2( 0.68, 0.68 )
+limit/left = 0
+limit/top = 0
+limit/right = 3000
+limit/bottom = 300
 drag_margin/h_enabled = true
 drag_margin/v_enabled = true
 smoothing/enable = true

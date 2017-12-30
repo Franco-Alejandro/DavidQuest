@@ -13,7 +13,7 @@ onready var health_bar = get_node("HealthBar")
 onready var spriteAnimation = get_node("AnimatedSprite")
 
 var health = 100
-var jump_count = 0
+var jump_count = 0 
 
 const ACCEL = 250
 const DECEL = 500
