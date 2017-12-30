@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=1]
 
-[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Level1.gd" type="Script" id=1]
 [ext_resource path="res://level1.tex" type="Texture" id=2]
 [ext_resource path="res://assets/sounds/1 Level 1 theme.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/Hotdog.tscn" type="PackedScene" id=4]
@@ -42,7 +42,7 @@ extents = Vector2( 51.7194, 29.4114 )
 custom_solver_bias = 0.0
 extents = Vector2( 40.0775, 0.512451 )
 
-[node name="Level1" type="Node2D"]
+[node name="World" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
@@ -343,13 +343,15 @@ stream/buffering_ms = 500
 
 [node name="Hotdogs" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Hotdog" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 577.355, 156.801 )
 
 [node name="Hotdog3" parent="Hotdogs" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1338.16, 52.801 )
+transform/pos = Vector2( 1337.35, 52.801 )
 
 [node name="Hotdog4" parent="Hotdogs" instance=ExtResource( 4 )]
 
@@ -419,13 +421,10 @@ transform/pos = Vector2( 421.399, 146.801 )
 
 transform/pos = Vector2( 65.4559, 244.201 )
 
-[node name="SuperHotdog " type="Node2D" parent="."]
+[node name="SuperHotdog" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 3094.12, 151.089 )
-transform/scale = Vector2( 0.86145, 0.809055 )
+transform/pos = Vector2( 2950.32, 250.868 )
 
-[node name="super1" parent="SuperHotdog " instance=ExtResource( 6 )]
-
-transform/pos = Vector2( -173.027, 118.795 )
+[connection signal="hide" from="SuperHotdog" to="." method="_on_SuperHotdog_hide"]
 
 
