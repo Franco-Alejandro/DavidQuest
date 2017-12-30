@@ -30,5 +30,5 @@ func update():
 	health.set_scale(Vector2(percentage,1))
 	
 	#Update label
-	var percentage_txt = str(percentage*100)+"%"
+	var percentage_txt =""
 	Health_points.set_text(percentage_txt.pad_decimals(0))

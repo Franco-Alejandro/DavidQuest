@@ -4,7 +4,7 @@ var  hotdogs_collected = 0
 
 
 func _ready():
-	# Called every time the node is added to the scene.
+	OS.set_window_resizable(false)
 	# Initialization here
 	pass
 
