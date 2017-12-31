@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scripts/SuperHotdog.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/superpancho.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 13.3469
+
+[node name="SuperHotdog" type="Node2D"]
+
+script/script = ExtResource( 1 )
+value = 1
+
+[node name="SuperHotdogSprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -0.581813, -0.0285339 )
+transform/scale = Vector2( 1.17384, 1.52084 )
+texture = ExtResource( 2 )
+
+[node name="SuperHotdogArea2D" type="Area2D" parent="."]
+
+transform/pos = Vector2( -0.0117264, -3.81661 )
+transform/scale = Vector2( 0.556941, 0.484991 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.25645, 0, 0, 1.32443, -0.134701, 6.81634 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="SuperHotdogCollisionShape2D" type="CollisionShape2D" parent="SuperHotdogArea2D"]
+
+transform/pos = Vector2( -0.134701, 6.81634 )
+transform/scale = Vector2( 1.25645, 1.32443 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="SuperHotdogArea2D" to="." method="_collect_hotdog"]
+
+
