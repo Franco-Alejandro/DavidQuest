@@ -34,6 +34,7 @@ func _input(event):
 		speed_y = -JUMP_FORCE
 		jump_count += 1
 		spriteAnimation.play("jump")
+		get_node("../JumpSound").play("SFX SALTO")
 		jumping = true
 	pass
 
