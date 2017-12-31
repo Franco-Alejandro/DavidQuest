@@ -5,7 +5,7 @@ onready var SHotdog = get_node("SuperHotdog")
 onready var global_singleton = get_node("/root/Global")
 
 func _ready():
-	#SHotdog.connect("hide", self, "_on_SuperHotdog_hide" )
+	SHotdog.connect("hide", self, "_on_SuperHotdog_hide" )
 	pass
 
 

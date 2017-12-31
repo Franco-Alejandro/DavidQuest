@@ -82,11 +82,12 @@ func _process(delta):
 	var movement_reminder = move(velocity)
 	health_bar.set_global_pos(Vector2(get_node( "Camera2D" ).get_global_pos().x,25))
 	if(health<0):
-		queue_free()
+		get_parent().global_singleton.goto_scene("res://Scenes/Level1.tscn")
 	if get_owner().hotdogs_collected>0:
 		get_owner().hotdogs_collected = 0;
 		health += 10
 		health_bar.set_hp(health)
+		get_node("EatingSFX").play("SFX OBTENCION PANCHO")
 	if is_colliding():
 		jumping = false
 		var normal = get_collision_normal()

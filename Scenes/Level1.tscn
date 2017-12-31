@@ -353,8 +353,6 @@ stream/buffering_ms = 500
 
 [node name="Hotdogs" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Hotdog" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 577.355, 156.801 )
@@ -413,7 +411,7 @@ transform/pos = Vector2( 615.355, 265.801 )
 
 [node name="Hotdog12" parent="Hotdogs" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 121.355, 181.801 )
+transform/pos = Vector2( 172.073, 157.417 )
 
 [node name="Hotdog13" parent="Hotdogs" instance=ExtResource( 4 )]
 
@@ -429,7 +427,7 @@ transform/pos = Vector2( 421.399, 146.801 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 65.4559, 244.201 )
+transform/pos = Vector2( 60.5791, 221.768 )
 
 [node name="SuperHotdog" parent="." instance=ExtResource( 6 )]
 

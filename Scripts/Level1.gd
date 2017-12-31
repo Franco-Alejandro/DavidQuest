@@ -1,6 +1,6 @@
 extends Node2D
 var hotdogs_total = 0
-var hotdogs_collected = 0
+var hotdogs_collected = -1
 onready var SHotdog = get_node("SuperHotdog")
 onready var global_singleton = get_node("/root/Global")
 
