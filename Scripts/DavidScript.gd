@@ -83,7 +83,8 @@ func _process(delta):
 	var movement_reminder = move(velocity)
 	health_bar.set_global_pos(Vector2(get_node( "Camera2D" ).get_global_pos().x,25))
 	if(health<0):
-		
+		get_node("DyingSFX").play("David grito")
+		OS.delay_msec(2400)
 		global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")
 	if get_owner().hotdogs_collected>0:
 		get_owner().hotdogs_collected = 0;
