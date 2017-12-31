@@ -15,7 +15,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "SuperPancho",
-"speed": 2.0
+"speed": 5.0
 } ]
 
 [node name="SuperHotdog" type="Node2D"]

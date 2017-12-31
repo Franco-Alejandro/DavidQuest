@@ -353,6 +353,8 @@ stream/buffering_ms = 500
 
 [node name="Hotdogs" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Hotdog" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 577.355, 156.801 )
