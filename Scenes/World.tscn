@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://level1.tex" type="Texture" id=2]
@@ -333,7 +333,7 @@ _update_shape_index = 5
 [node name="MusicLevel1" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 3 )
-stream/play = true
+stream/play = false
 stream/loop = true
 stream/volume_db = 0.0399999
 stream/autoplay = true
