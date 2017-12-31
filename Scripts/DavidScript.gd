@@ -22,6 +22,7 @@ const JUMP_FORCE = 600
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
+onready var global_singleton = get_node("/root/Global")
 
 func _ready():
 	set_process_input(true)
@@ -82,7 +83,8 @@ func _process(delta):
 	var movement_reminder = move(velocity)
 	health_bar.set_global_pos(Vector2(get_node( "Camera2D" ).get_global_pos().x,25))
 	if(health<0):
-		get_parent().global_singleton.goto_scene("res://Scenes/Level1.tscn")
+		
+		global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")
 	if get_owner().hotdogs_collected>0:
 		get_owner().hotdogs_collected = 0;
 		health += 10
