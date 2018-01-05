@@ -3,7 +3,6 @@ extends Node2D
 export var value = 1
 
 func _ready():
-	get_node("SuperHotdogArea2D").connect("body_enter", self, "_collect_hotdog" )
 	pass
 
 

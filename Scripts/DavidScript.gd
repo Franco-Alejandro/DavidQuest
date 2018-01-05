@@ -1,20 +1,19 @@
 extends KinematicBody2D
 
+#HEALTH BAR
+var health = 100
+onready var health_bar = get_node("HealthBar")
+
+#MOVEMENT
+var jump_count = 0 
 var direction = 0
 var input_direction = 0
 var velocity = Vector2()
 var speed_x = 0
 var speed_y = 0
-var jumps_until_now = 0
 var jumping = false
 
-#HEALTH BAR
-onready var health_bar = get_node("HealthBar")
-onready var spriteAnimation = get_node("AnimatedSprite")
-
-var health = 100
-var jump_count = 0 
-
+#CONST VALUES
 const ACCEL = 250
 const DECEL = 500
 const MAX_SPEED = 150
@@ -22,8 +21,10 @@ const JUMP_FORCE = 600
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
-onready var global_singleton = get_node("/root/Global")
+const LIFE_COST_PER_STEP = 0.21
 
+onready var global_singleton = get_node("/root/Global")
+onready var spriteAnimation = get_node("AnimatedSprite")
 func _ready():
 	set_process_input(true)
 	set_process(true)
@@ -44,13 +45,9 @@ func set_direction():
 		direction = input_direction
 	if Input.is_action_pressed("ui_left"):
 		input_direction = -1
-		health -= 0.20
-		health_bar.set_hp(health)
 		spriteAnimation.set_flip_h(true)
 	elif Input.is_action_pressed("ui_right"):
 		input_direction = 1
-		health -= 0.20
-		health_bar.set_hp(health)
 		spriteAnimation.set_flip_h(false)
 	else:
 		input_direction = 0
@@ -60,14 +57,13 @@ func _process(delta):
 	set_direction()
 	if input_direction:
 		speed_x += ACCEL * delta
+		health -= LIFE_COST_PER_STEP
 	else:
 		speed_x -= DECEL * delta
 	
-	speed_x = clamp(speed_x, 0, MAX_SPEED)
-	
 	speed_y += GRAVITY * delta
-	if speed_y > MAX_FALL_SPEED:
-		speed_y = MAX_FALL_SPEED
+	speed_y = clamp(speed_y, -MAX_FALL_SPEED, MAX_FALL_SPEED)
+	speed_x = clamp(speed_x, 0, MAX_SPEED)
 	
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
@@ -81,7 +77,6 @@ func _process(delta):
 		
 
 	var movement_reminder = move(velocity)
-	health_bar.set_global_pos(Vector2(get_node( "Camera2D" ).get_global_pos().x,25))
 	if(health<0):
 		get_node("DyingSFX").play("David grito")
 		OS.delay_msec(2400)
@@ -89,7 +84,6 @@ func _process(delta):
 	if get_owner().hotdogs_collected>0:
 		get_owner().hotdogs_collected = 0;
 		health += 10
-		health_bar.set_hp(health)
 		get_node("EatingSFX").play("SFX OBTENCION PANCHO")
 	if is_colliding():
 		jumping = false
@@ -98,5 +92,6 @@ func _process(delta):
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
 		jump_count = 0
-	
+	health_bar.set_hp(health)
+	health_bar.set_position(get_node( "Camera2D" ).get_camera_screen_center().x,20)
 	pass

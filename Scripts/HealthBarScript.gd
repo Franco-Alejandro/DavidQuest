@@ -10,6 +10,7 @@ onready var health = get_node("Health")
 func _ready():
 	if(!display_health_label):
 		Health_points.hide()
+	
 	pass
 
 func init():
@@ -19,7 +20,8 @@ func set_hp(value):
 	curr_val = clamp (value,0,max_hp)
 	update()
 
-
+func set_position(var x, var y):
+	set_global_pos(Vector2(x,y))
 
 func update():
 	
