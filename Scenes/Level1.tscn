@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=1]
 [ext_resource path="res://level1.tex" type="Texture" id=2]
-[ext_resource path="res://assets/sounds/1 Level 1 theme.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/3 Theme 3.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/Hotdog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/David.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/SuperHotdog.tscn" type="PackedScene" id=6]
@@ -68,8 +68,11 @@ texture = ExtResource( 2 )
 
 [node name="Ground" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Floor" type="StaticBody2D" parent="Ground"]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1.07668, 198.542, 285.518 )
