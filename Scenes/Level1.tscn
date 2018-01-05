@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=1]
 [ext_resource path="res://level1.tex" type="Texture" id=2]
-[ext_resource path="res://assets/sounds/3 Theme 3.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/1 Level 1 theme.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Scenes/Hotdog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/David.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/SuperHotdog.tscn" type="PackedScene" id=6]
