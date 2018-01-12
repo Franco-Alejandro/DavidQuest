@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Scripts/Level2.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/level 2.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/sounds/SFX SALTO.wav" type="Sample" id=5]
 [ext_resource path="res://assets/sounds/2 level 2 theme.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/SuperHotdog.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/AnonimoHotdog.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -153,6 +154,8 @@ transform/pos = Vector2( 2958.25, 257.208 )
 
 [node name="Collisions" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Floor" type="StaticBody2D" parent="Collisions"]
 
 input/pickable = false
@@ -227,5 +230,27 @@ transform/scale = Vector2( 149.479, 1 )
 shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnonimoHotdog" parent="Node2D" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 192.912, 193.495 )
+
+[node name="AnonimoHotdog1" parent="Node2D" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 293.96, 192.955 )
+
+[node name="AnonimoHotdog2" parent="Node2D" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 503.079, 156.21 )
+
+[node name="AnonimoHotdog3" parent="Node2D" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 425.267, 207.545 )
+
+[node name="AnonimoHotdog4" parent="Node2D" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 645.734, 207.004 )
 
 

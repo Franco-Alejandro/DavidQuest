@@ -9,15 +9,13 @@ script/source = "extends Node2D
 export var value = 1
 
 func _ready():
-	if get_owner() != null:
-		get_owner().hotdogs_total += value
 	get_node(\"HotdogAnimation\").play(\"Anim\")
 	pass
 
 
 func _collect_hotdog( body ):
 	if get_owner() != null:
-		get_owner().hotdogs_collected += value
+		get_owner().get_node(\"David\").hotdogs_collected += value
 	queue_free()
 	
 "

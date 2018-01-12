@@ -68,8 +68,6 @@ texture = ExtResource( 2 )
 
 [node name="Ground" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Floor" type="StaticBody2D" parent="Ground"]
 
 editor/display_folded = true
@@ -144,7 +142,6 @@ _update_shape_index = 0
 
 [node name="Reja" type="StaticBody2D" parent="Ground"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 462.884, 250.926 )
@@ -369,8 +366,6 @@ stream/buffering_ms = 500
 
 [node name="Hotdogs" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Hotdog" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 577.355, 156.801 )
@@ -443,9 +438,9 @@ transform/pos = Vector2( 1626.4, 133.801 )
 
 transform/pos = Vector2( 421.399, 146.801 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+[node name="David" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 60.5791, 221.768 )
+transform/pos = Vector2( 58.3631, 232.848 )
 
 [node name="SuperHotdog" parent="." instance=ExtResource( 6 )]
 

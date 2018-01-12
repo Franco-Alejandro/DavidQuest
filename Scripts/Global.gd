@@ -1,12 +1,12 @@
 extends Node
 
-
 var current_scene = null
 
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child( root.get_child_count() -1 )
 	OS.set_window_resizable(false)
+	
 
 func goto_scene(path):
 
@@ -18,8 +18,7 @@ func goto_scene(path):
 
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
-
-    call_deferred("_deferred_goto_scene",path)
+	call_deferred("_deferred_goto_scene",path)
 
 
 func _deferred_goto_scene(path):
@@ -39,3 +38,4 @@ func _deferred_goto_scene(path):
 
     # optional, to make it compatible with the SceneTree.change_scene() API
     get_tree().set_current_scene( current_scene )
+
