@@ -108,4 +108,3 @@ func set_direction(delta):
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
 	pass
-	
