@@ -24,7 +24,7 @@ const JUMP_FORCE = 600
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
-const LIFE_COST_PER_STEP = 0.21
+const LIFE_COST_PER_STEP = 0.05
 
 onready var global_singleton = get_node("/root/Global")
 onready var spriteAnimation = get_node("AnimatedSprite")
@@ -50,11 +50,11 @@ func update_health():
 		global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")
 	if hotdogs_collected>0:
 		hotdogs_collected = 0;
-		health += 10
+		health += 20
 		get_node("EatingSFX").play("SFX OBTENCION PANCHO")
 	if bad_hotdog_eaten>0:
 		bad_hotdog_eaten = 0;
-		health -= 10
+		health -= 12
 
 
 func collisioning(var movement_reminder):
@@ -65,7 +65,7 @@ func collisioning(var movement_reminder):
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
 		jump_count = 0
-		
+
 func animations():
 	if !jumping:
 		if (input_direction == 0) :
