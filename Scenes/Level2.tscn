@@ -48,11 +48,13 @@ transform/pos = Vector2( 39.6622, 237.977 )
 
 [node name="Hotdogs" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Hotdog" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 116.177, 246.775 )
+
+[node name="Hotdog16" parent="Hotdogs" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 38.3652, 233.806 )
 
 [node name="Hotdog1" parent="Hotdogs" instance=ExtResource( 4 )]
 

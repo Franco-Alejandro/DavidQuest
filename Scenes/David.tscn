@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Scripts/DavidScript.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/HealthBar.tscn" type="PackedScene" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://assets/images/walk1.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/walk2.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/jump.png" type="Texture" id=6]
-[ext_resource path="res://assets/sounds/SFX OBTENCION PANCHO.wav" type="Sample" id=7]
-[ext_resource path="res://assets/sounds/David grito.wav" type="Sample" id=8]
+[ext_resource path="res://assets/sounds/David grito.wav" type="Sample" id=7]
+[ext_resource path="res://assets/sounds/SFX OBTENCION PANCHO.wav" type="Sample" id=8]
+[ext_resource path="res://assets/sounds/sfx_panchomalo.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/sfx_pasos.ogg" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -35,16 +37,13 @@ animations = [ {
 
 [sub_resource type="SampleLibrary" id=3]
 
-"samples/SFX OBTENCION PANCHO" = {
+"samples/David grito" = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 7 )
 }
-
-[sub_resource type="SampleLibrary" id=4]
-
-"samples/David grito" = {
+"samples/SFX OBTENCION PANCHO" = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
@@ -102,7 +101,7 @@ drag_margin/bottom = 1.0
 frames = SubResource( 2 )
 animation = "idle"
 
-[node name="EatingSFX" type="SamplePlayer" parent="."]
+[node name="DyingEatingSFX" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
 config/samples = SubResource( 3 )
@@ -119,21 +118,26 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
-[node name="DyingSFX" type="SamplePlayer" parent="."]
+[node name="BadHotdogSFX" type="StreamPlayer" parent="."]
 
-config/polyphony = 1
-config/samples = SubResource( 4 )
-default/volume_db = 0.0
-default/pitch_scale = 1.0
-default/pan = 0.0
-default/depth = 0.0
-default/height = 0.0
-default/filter/type = 0
-default/filter/cutoff = 5000.0
-default/filter/resonance = 1.0
-default/filter/gain = 1.0
-default/reverb_room = 2
-default/reverb_send = 0.0
-default/chorus_send = 0.0
+stream/stream = ExtResource( 9 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 3.31
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="WalkingSFX" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 10 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 8.5
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

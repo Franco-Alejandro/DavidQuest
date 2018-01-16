@@ -68,6 +68,8 @@ texture = ExtResource( 2 )
 
 [node name="Ground" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Floor" type="StaticBody2D" parent="Ground"]
 
 input/pickable = false

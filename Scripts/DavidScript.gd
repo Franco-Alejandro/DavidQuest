@@ -24,10 +24,14 @@ const JUMP_FORCE = 600
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
-const LIFE_COST_PER_STEP = 0.05
+const LIFE_COST_PER_STEP = 0.01
 
 onready var global_singleton = get_node("/root/Global")
-onready var spriteAnimation = get_node("AnimatedSprite")
+onready var sprite_animation = get_node("AnimatedSprite")
+onready var wav_sfx = get_node("DyingEatingSFX")
+onready var walking_sfx =  get_node("WalkingSFX")
+
+
 func _ready():
 	set_process_input(true)
 	set_fixed_process(true)
@@ -45,16 +49,17 @@ func _fixed_process(delta):
 
 func update_health():
 	if(health<0):
-		get_node("DyingSFX").play("David grito")
+		wav_sfx.play("David grito")
 		OS.delay_msec(2400)
 		global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")
 	if hotdogs_collected>0:
 		hotdogs_collected = 0;
 		health += 20
-		get_node("EatingSFX").play("SFX OBTENCION PANCHO")
+		wav_sfx.play("SFX OBTENCION PANCHO")
 	if bad_hotdog_eaten>0:
 		bad_hotdog_eaten = 0;
 		health -= 12
+		get_node("BadHotdogSFX").play()
 
 
 func collisioning(var movement_reminder):
@@ -69,18 +74,20 @@ func collisioning(var movement_reminder):
 func animations():
 	if !jumping:
 		if (input_direction == 0) :
-			spriteAnimation.play("idle")
+			sprite_animation.play("idle")
 		else:
-			spriteAnimation.play("walk")
+			sprite_animation.play("walk")
+			if not walking_sfx.is_playing():
+				walking_sfx.play()
 	else:
-		spriteAnimation.play("jump")
+		sprite_animation.play("jump")
 		
 		
 func _input(event):
 	if jump_count < MAX_JUMP_COUNT and event.is_action_pressed("ui_up"):
 		speed_y = -JUMP_FORCE
 		jump_count += 1
-		spriteAnimation.play("jump")
+		sprite_animation.play("jump")
 		get_node("../JumpSound").play("SFX SALTO")
 		jumping = true
 	pass
@@ -93,11 +100,11 @@ func set_direction(delta):
 	else:
 		speed_x -= DECEL * delta
 	if Input.is_action_pressed("ui_left"):
-		input_direction = -1
-		spriteAnimation.set_flip_h(true)
+		input_direction = -1		
+		sprite_animation.set_flip_h(true)
 	elif Input.is_action_pressed("ui_right"):
-		input_direction = 1
-		spriteAnimation.set_flip_h(false)
+		input_direction = 1	
+		sprite_animation.set_flip_h(false)
 	else:
 		input_direction = 0
 		
