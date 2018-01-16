@@ -3,6 +3,7 @@ extends Node
 var current_scene = null
 
 func _ready():
+	OS.set_target_fps(60)
 	var root = get_tree().get_root()
 	current_scene = root.get_child( root.get_child_count() -1 )
 	OS.set_window_resizable(false)
