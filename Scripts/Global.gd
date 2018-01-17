@@ -4,11 +4,17 @@ var current_scene = null
 
 func _ready():
 	OS.set_target_fps(60)
+	OS.set_use_vsync(true)
+	OS.set_iterations_per_second(60)
 	var root = get_tree().get_root()
 	current_scene = root.get_child( root.get_child_count() -1 )
 	OS.set_window_resizable(false)
+	set_process_input(true)
 	
-
+func _input(event):
+	if event.is_action_released("ui_cancel"):
+		get_tree().quit()
+		
 func goto_scene(path):
 
     # This function will usually be called from a signal callback,

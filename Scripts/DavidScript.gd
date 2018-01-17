@@ -20,16 +20,21 @@ var jumping = false
 const ACCEL = 250
 const DECEL = 500
 const MAX_SPEED = 150
-const JUMP_FORCE = 600
+const JUMP_FORCE = 555
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
 const LIFE_COST_PER_STEP = 0.01
+const HEALTH_PER_HOTDOG = 10
+const MAX_HEALTH = 100
+const MIN_HEALTH = -1
+enum {BACKWARDS = -1, NONE = 0, FORWARD=1}
 
 onready var global_singleton = get_node("/root/Global")
 onready var sprite_animation = get_node("AnimatedSprite")
-onready var wav_sfx = get_node("DyingEatingSFX")
+onready var wav_dj_sfx = get_node("DyingJumpingSFX")
 onready var walking_sfx =  get_node("WalkingSFX")
+onready var eating_sfx =  get_node("EatingSFX")
 
 
 func _ready():
@@ -49,27 +54,27 @@ func _fixed_process(delta):
 
 func update_health():
 	if(health<0):
-		wav_sfx.play("David grito")
-		OS.delay_msec(2400)
-		global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")
+		david_die()
 	if hotdogs_collected>0:
 		hotdogs_collected = 0;
-		health += 20
-		wav_sfx.play("SFX OBTENCION PANCHO")
+		health += HEALTH_PER_HOTDOG
+		eating_sfx.play("SFX OBTENCION PANCHO")
 	if bad_hotdog_eaten>0:
 		bad_hotdog_eaten = 0;
-		health -= 12
+		health -= HEALTH_PER_HOTDOG
 		get_node("BadHotdogSFX").play()
-
+	health = clamp(health,MIN_HEALTH,MAX_HEALTH)
+	
 
 func collisioning(var movement_reminder):
 	if is_colliding():
-		jumping = false
 		var normal = get_collision_normal()
 		var final_movement = normal.slide(movement_reminder)
 		speed_y = normal.slide(Vector2(0, speed_y)).y
 		move(final_movement)
-		jump_count = 0
+		if speed_y == 0:
+			jumping = false
+			jump_count = 0
 
 func animations():
 	if !jumping:
@@ -88,7 +93,7 @@ func _input(event):
 		speed_y = -JUMP_FORCE
 		jump_count += 1
 		sprite_animation.play("jump")
-		get_node("../JumpSound").play("SFX SALTO")
+		wav_dj_sfx.play("SFX SALTO")
 		jumping = true
 	pass
 
@@ -100,13 +105,13 @@ func set_direction(delta):
 	else:
 		speed_x -= DECEL * delta
 	if Input.is_action_pressed("ui_left"):
-		input_direction = -1		
+		input_direction = BACKWARDS
 		sprite_animation.set_flip_h(true)
 	elif Input.is_action_pressed("ui_right"):
-		input_direction = 1	
+		input_direction = FORWARD
 		sprite_animation.set_flip_h(false)
 	else:
-		input_direction = 0
+		input_direction = NONE
 		
 	speed_y += GRAVITY * delta
 	speed_y = clamp(speed_y, -MAX_FALL_SPEED, MAX_FALL_SPEED)
@@ -115,3 +120,8 @@ func set_direction(delta):
 	velocity.x = speed_x * delta * direction
 	velocity.y = speed_y * delta
 	pass
+	
+func david_die():
+	wav_dj_sfx.play("David grito")
+	OS.delay_msec(2400)
+	global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")
