@@ -20,7 +20,7 @@ var jumping = false
 const ACCEL = 250
 const DECEL = 500
 const MAX_SPEED = 150
-const JUMP_FORCE = 555
+const JUMP_FORCE = 500
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
@@ -70,9 +70,8 @@ func collisioning(var movement_reminder):
 	if is_colliding():
 		var normal = get_collision_normal()
 		var final_movement = normal.slide(movement_reminder)
-		speed_y = normal.slide(Vector2(0, speed_y)).y
-		move(final_movement)
-		if speed_y == 0:
+		speed_y = normal.slide(Vector2(0, speed_y)).y		
+		if move(final_movement) == Vector2(0,0):
 			jumping = false
 			jump_count = 0
 
