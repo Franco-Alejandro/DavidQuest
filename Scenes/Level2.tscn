@@ -67,7 +67,7 @@ script/script = ExtResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 1500.86, 148.354 )
+transform/pos = Vector2( 1501.26, 147.957 )
 texture = ExtResource( 2 )
 
 [node name="David" parent="." instance=ExtResource( 3 )]
@@ -157,6 +157,16 @@ transform/pos = Vector2( 1880.44, 255.369 )
 transform/pos = Vector2( 1999.53, 251.686 )
 transform/rot = -1.86597
 
+[node name="Hotdog31" parent="Hotdogs" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1995.57, 191.389 )
+transform/rot = -1.86597
+
+[node name="Hotdog32" parent="Hotdogs" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1892.14, 148.257 )
+transform/rot = -1.86597
+
 [node name="Hotdog11" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2215.61, 257.825 )
@@ -175,6 +185,16 @@ transform/rot = -1.86597
 [node name="Hotdog13" parent="Hotdogs" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 2558.15, 244.32 )
+transform/rot = -1.86597
+
+[node name="Hotdog33" parent="Hotdogs" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2447.68, 250.482 )
+transform/rot = -1.86597
+
+[node name="Hotdog34" parent="Hotdogs" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2508.71, 77.9933 )
 transform/rot = -1.86597
 
 [node name="Hotdog14" parent="Hotdogs" instance=ExtResource( 4 )]
@@ -308,8 +328,6 @@ _update_shape_index = 0
 
 [node name="BadHotdogs" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="AnonimoHotdog" parent="BadHotdogs" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 196.504, 170.144 )
@@ -352,7 +370,27 @@ transform/pos = Vector2( 924.508, 160.173 )
 
 [node name="AnonimoHotdog13" parent="BadHotdogs" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 1021.43, 195.196 )
+transform/pos = Vector2( 1021.43, 195.931 )
+
+[node name="AnonimoHotdog43" parent="BadHotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 876.618, 188.58 )
+
+[node name="AnonimoHotdog44" parent="BadHotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 925.133, 190.05 )
+
+[node name="AnonimoHotdog45" parent="BadHotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1144.92, 174.614 )
+
+[node name="AnonimoHotdog46" parent="BadHotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1223.58, 190.785 )
+
+[node name="AnonimoHotdog47" parent="BadHotdogs" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1276.51, 193.726 )
 
 [node name="AnonimoHotdog14" parent="BadHotdogs" instance=ExtResource( 7 )]
 
@@ -360,7 +398,7 @@ transform/pos = Vector2( 1101.26, 56.7304 )
 
 [node name="AnonimoHotdog15" parent="BadHotdogs" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 1238.91, 237.551 )
+transform/pos = Vector2( 1177.16, 233.876 )
 
 [node name="AnonimoHotdog16" parent="BadHotdogs" instance=ExtResource( 7 )]
 
@@ -518,7 +556,7 @@ shapes/9/shape = SubResource( 6 )
 shapes/9/transform = Matrix32( 0.632714, 0, 0, 4.57971, 1612.82, 90.7704 )
 shapes/9/trigger = false
 shapes/10/shape = SubResource( 6 )
-shapes/10/transform = Matrix32( 0.656581, 0, 0, 4.57971, 1754.23, 142.164 )
+shapes/10/transform = Matrix32( 0.542182, 0, 0, 4.57971, 1746.06, 142.164 )
 shapes/10/trigger = false
 shapes/11/shape = SubResource( 6 )
 shapes/11/transform = Matrix32( 0.815582, 0, 0, 4.57971, 1895.13, 173.85 )
@@ -640,8 +678,8 @@ _update_shape_index = 9
 
 [node name="CementeryWall13" type="CollisionShape2D" parent="CollisionObjects/BackgroundCollisions"]
 
-transform/pos = Vector2( 1754.23, 142.164 )
-transform/scale = Vector2( 0.656581, 4.57971 )
+transform/pos = Vector2( 1746.06, 142.164 )
+transform/scale = Vector2( 0.542182, 4.57971 )
 shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 10

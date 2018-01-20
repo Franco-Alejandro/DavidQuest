@@ -7,8 +7,8 @@
 [ext_resource path="res://Scenes/Hotdog.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/David.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/FinalHotdog.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/SuperHotdog.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/AnonimoHotdog.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/AnonimoHotdog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SuperHotdog.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -66,7 +66,6 @@ texture = ExtResource( 2 )
 
 [node name="Tree1" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 1530, 0 )
 
 [node name="Sprite" type="Sprite" parent="Tree1"]
@@ -82,7 +81,7 @@ shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.123091, 0, 0, 0.663883, 251.61, 186.008 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
-shapes/1/transform = Matrix32( 0.0944919, 0, 0, 0.663883, 200.906, 174.034 )
+shapes/1/transform = Matrix32( 0.104854, 0, 0, 0.663883, 198.16, 174.034 )
 shapes/1/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -103,8 +102,8 @@ _update_shape_index = 0
 
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="Tree1/Branch"]
 
-transform/pos = Vector2( 200.906, 174.034 )
-transform/scale = Vector2( 0.0944919, 0.663883 )
+transform/pos = Vector2( 198.16, 174.034 )
+transform/scale = Vector2( 0.104854, 0.663883 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 1
@@ -589,206 +588,206 @@ shape = SubResource( 9 )
 trigger = false
 _update_shape_index = 1
 
-[node name="SuperHotdog" parent="." instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 1566.56, 153.125 )
-
-[node name="SuperHotdog1" parent="." instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 1205.87, 122.57 )
-transform/scale = Vector2( 1, 1.01674 )
-
 [node name="BadHotdogs" type="Node2D" parent="."]
 
-[node name="AnonimoHotdog" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 206.562, 241.887 )
 
-[node name="AnonimoHotdog1" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog1" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 129.925, 201.174 )
 
-[node name="AnonimoHotdog2" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog2" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 107.173, 46.1023 )
 
-[node name="AnonimoHotdog3" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog3" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 428.691, 221.53 )
 
-[node name="AnonimoHotdog4" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog4" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 341.875, 212.549 )
 
-[node name="AnonimoHotdog5" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog5" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 386.181, 267.633 )
 
-[node name="AnonimoHotdog6" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog6" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 472.997, 147.288 )
 
-[node name="AnonimoHotdog7" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog7" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 566.998, 58.6756 )
 
-[node name="AnonimoHotdog8" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog8" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 692.732, 192.791 )
 
-[node name="AnonimoHotdog9" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog9" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 726.859, 195.186 )
 
-[node name="AnonimoHotdog10" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog10" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 726.859, 195.186 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog11" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog11" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1059.16, 176.626 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog14" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog14" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1168.12, 176.626 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog15" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog15" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1233.39, 171.237 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog17" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog17" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1233.39, 171.237 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog18" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog18" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1415.4, 241.887 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog19" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog19" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1290.86, 223.327 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog20" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog20" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1507.18, 189.798 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog21" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog21" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1659.7, 216.176 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog33" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog33" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1602.84, 215.274 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog34" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog34" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1527.03, 239.641 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog35" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog35" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1647.06, 255.886 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog36" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog36" parent="BadHotdogs" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 1610.38, 175.179 )
+transform/pos = Vector2( 1610.98, 178.771 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog37" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog37" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1559.52, 200.834 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog38" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog38" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1695.87, 193.126 )
 transform/rot = 1.25468
 
-[node name="AnonimoHotdog39" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog39" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1458.44, 239.641 )
 transform/rot = 1.25468
 
-[node name="AnonimoHotdog22" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog22" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1772.24, 229.913 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog23" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog23" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1772.24, 270.028 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog24" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog24" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1747.1, 57.4781 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog25" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog25" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1827.33, 55.6819 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog26" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog26" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1865.05, 203.568 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog27" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog27" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1911.15, 261.645 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog28" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog28" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1963.24, 147.288 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog29" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog29" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2040.48, 168.243 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog30" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog30" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2068.02, 224.524 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog31" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog31" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2090.17, 267.633 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog32" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog32" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2164.41, 274.219 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog16" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog16" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1214.83, 24.5479 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog12" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog12" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1071.73, 231.11 )
 transform/rot = 3.18378
 
-[node name="AnonimoHotdog13" parent="BadHotdogs" instance=ExtResource( 9 )]
+[node name="AnonimoHotdog13" parent="BadHotdogs" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1090.89, 267.034 )
 transform/rot = 3.18378
+
+[node name="SuperHotdog" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1564.76, 162.705 )
+
+[node name="SuperHotdog1" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1205.87, 120.668 )
+transform/scale = Vector2( 1, 1.01674 )
 
 [connection signal="body_enter" from="DeathCollisions/DeathArea" to="." method="_on_DeathArea_body_enter"]
 

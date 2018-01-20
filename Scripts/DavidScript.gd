@@ -15,17 +15,18 @@ var velocity = Vector2()
 var speed_x = 0
 var speed_y = 0
 var jumping = false
+var added_jump =0
 
 #CONST VALUES
 const ACCEL = 250
 const DECEL = 500
-const MAX_SPEED = 150
+const MAX_SPEED = 125
 const JUMP_FORCE = 500
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
-const LIFE_COST_PER_STEP = 0.15
-const HEALTH_PER_HOTDOG = 10
+const LIFE_COST_PER_STEP = 0.165
+const HEALTH_PER_HOTDOG = 10.3
 const MAX_HEALTH = 100
 const MIN_HEALTH = -1
 enum {BACKWARDS = -1, NONE = 0, FORWARD=1}
@@ -71,8 +72,9 @@ func collisioning(var movement_reminder):
 	if is_colliding():
 		var normal = get_collision_normal()
 		var final_movement = normal.slide(movement_reminder)
-		speed_y = normal.slide(Vector2(0, speed_y)).y		
+		speed_y = normal.slide(Vector2(0, speed_y)).y
 		if move(final_movement) == Vector2(0,0):
+			added_jump = 0
 			jumping = false
 			jump_count = 0
 
@@ -90,7 +92,7 @@ func animations():
 		
 func _input(event):
 	if jump_count < MAX_JUMP_COUNT and event.is_action_pressed("ui_up"):
-		speed_y = -JUMP_FORCE
+		speed_y = -JUMP_FORCE-added_jump
 		jump_count += 1
 		sprite_animation.play("jump")
 		jumping_sfx.play()

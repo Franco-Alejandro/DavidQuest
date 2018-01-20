@@ -9,4 +9,6 @@ func _ready():
 
 
 func _on_SuperHotdog_hide():
+	get_node("David/SuperHotdogEaten").play()
+	OS.delay_msec(3000)
 	global_singleton.goto_scene("res://Scenes/Level3.tscn")
