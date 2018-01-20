@@ -97,6 +97,14 @@ func _input(event):
 		sprite_animation.play("jump")
 		jumping_sfx.play()
 		jumping = true
+	elif Input.is_action_pressed("ui_left"):
+		input_direction = BACKWARDS
+		sprite_animation.set_flip_h(true)
+	elif Input.is_action_pressed("ui_right"):
+		input_direction = FORWARD
+		sprite_animation.set_flip_h(false)
+	else:
+		input_direction = NONE
 	pass
 
 func set_direction(delta):
@@ -106,14 +114,7 @@ func set_direction(delta):
 		health -= LIFE_COST_PER_STEP
 	else:
 		speed_x -= DECEL * delta
-	if Input.is_action_pressed("ui_left"):
-		input_direction = BACKWARDS
-		sprite_animation.set_flip_h(true)
-	elif Input.is_action_pressed("ui_right"):
-		input_direction = FORWARD
-		sprite_animation.set_flip_h(false)
-	else:
-		input_direction = NONE
+	
 		
 	speed_y += GRAVITY * delta
 	speed_y = clamp(speed_y, -MAX_FALL_SPEED, MAX_FALL_SPEED)
