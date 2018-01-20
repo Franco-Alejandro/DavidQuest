@@ -88,6 +88,8 @@ texture = ExtResource( 2 )
 
 [node name="Collisions" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="FloorNRoof" type="StaticBody2D" parent="Collisions"]
 
 editor/display_folded = true
@@ -400,7 +402,7 @@ transform/pos = Vector2( 2501.1, 172.803 )
 
 [node name="Hotdog18" parent="Hotdogs" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 2684.31, 112.336 )
+transform/pos = Vector2( 2674.06, 182.054 )
 
 [node name="Hotdog17" parent="Hotdogs" instance=ExtResource( 4 )]
 
@@ -447,6 +449,8 @@ transform/pos = Vector2( 58.3631, 232.113 )
 transform/pos = Vector2( 2950.32, 250.868 )
 
 [node name="DeathZone" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Deathzone1" type="Area2D" parent="DeathZone"]
 

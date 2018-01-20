@@ -24,7 +24,7 @@ const JUMP_FORCE = 500
 const GRAVITY = 2000
 const MAX_FALL_SPEED = 1400
 const MAX_JUMP_COUNT = 2
-const LIFE_COST_PER_STEP = 0.01
+const LIFE_COST_PER_STEP = 0.15
 const HEALTH_PER_HOTDOG = 10
 const MAX_HEALTH = 100
 const MIN_HEALTH = -1
@@ -32,9 +32,10 @@ enum {BACKWARDS = -1, NONE = 0, FORWARD=1}
 
 onready var global_singleton = get_node("/root/Global")
 onready var sprite_animation = get_node("AnimatedSprite")
-onready var wav_dj_sfx = get_node("DyingJumpingSFX")
+onready var dying_sfx = get_node("DyingSFX")
 onready var walking_sfx =  get_node("WalkingSFX")
 onready var eating_sfx =  get_node("EatingSFX")
+onready var jumping_sfx = get_node("JumpingSFX")
 
 
 func _ready():
@@ -58,7 +59,7 @@ func update_health():
 	if hotdogs_collected>0:
 		hotdogs_collected = 0;
 		health += HEALTH_PER_HOTDOG
-		eating_sfx.play("SFX OBTENCION PANCHO")
+		eating_sfx.play()
 	if bad_hotdog_eaten>0:
 		bad_hotdog_eaten = 0;
 		health -= HEALTH_PER_HOTDOG
@@ -92,7 +93,7 @@ func _input(event):
 		speed_y = -JUMP_FORCE
 		jump_count += 1
 		sprite_animation.play("jump")
-		wav_dj_sfx.play("SFX SALTO")
+		jumping_sfx.play()
 		jumping = true
 	pass
 
@@ -121,6 +122,6 @@ func set_direction(delta):
 	pass
 	
 func david_die():
-	wav_dj_sfx.play("David grito")
+	dying_sfx.play("David grito")
 	OS.delay_msec(2400)
 	global_singleton.goto_scene("res://Scenes/"+get_tree().get_current_scene().get_name()+".tscn")

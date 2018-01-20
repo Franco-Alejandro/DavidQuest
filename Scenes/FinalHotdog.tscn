@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Scripts/FinalHotdog.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/panchofinal1.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/panchofinal2.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="FinalHotdog" type="Node2D"]
+
+transform/scale = Vector2( 3.07693, 2.18672 )
+script/script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.40691, 0, 0, 1.29531, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/scale = Vector2( 1.40691, 1.29531 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+
+[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+
